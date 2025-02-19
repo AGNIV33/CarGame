@@ -1,0 +1,5 @@
+<!-- Create a 800x600 pixel gray rectangle with some lines -->
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#333"/>
+  <line x1="400" y1="0" x2="400" y2="600" stroke="white" stroke-dasharray="20,20"/>
+</svg> 

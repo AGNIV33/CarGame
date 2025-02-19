@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TURBO RUSH - Racing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="menu" class="menu">
+            <div class="logo-container">
+                <h1 class="neon-text">TURBO</h1>
+                <h1 class="neon-text-2">RUSH</h1>
+            </div>
+            <div class="button-container">
+                <div class="difficulty-select">
+                    <button class="cyber-button difficulty-btn" data-difficulty="easy">
+                        <span class="cyber-button__glitch"></span>
+                        <span class="cyber-button__tag">1</span>
+                        EASY
+                    </button>
+                    <button class="cyber-button difficulty-btn" data-difficulty="medium">
+                        <span class="cyber-button__glitch"></span>
+                        <span class="cyber-button__tag">2</span>
+                        MEDIUM
+                    </button>
+                    <button class="cyber-button difficulty-btn" data-difficulty="hard">
+                        <span class="cyber-button__glitch"></span>
+                        <span class="cyber-button__tag">3</span>
+                        HARD
+                    </button>
+                </div>
+                <div class="car-select">
+                    <h3 class="neon-text-small">SELECT CAR</h3>
+                    <div class="car-options">
+                        <button class="cyber-button car-btn selected" data-car="red">
+                            <span class="cyber-button__glitch"></span>
+                            <span class="car-preview red-car">🏎️</span>
+                            SPORT
+                        </button>
+                        <button class="cyber-button car-btn" data-car="blue">
+                            <span class="cyber-button__glitch"></span>
+                            <span class="car-preview blue-car">🚙</span>
+                            SUV
+                        </button>
+                        <button class="cyber-button car-btn" data-car="yellow">
+                            <span class="cyber-button__glitch"></span>
+                            <span class="car-preview yellow-car">🚗</span>
+                            SUPER
+                        </button>
+                    </div>
+                </div>
+                <button id="startGame" class="cyber-button">
+                    <span class="cyber-button__glitch"></span>
+                    <span class="cyber-button__tag">P1</span>
+                    START GAME
+                </button>
+                <button id="joinGame" class="cyber-button">
+                    <span class="cyber-button__glitch"></span>
+                    <span class="cyber-button__tag">P2</span>
+                    MULTIPLAYER
+                </button>
+                <button id="soundToggle" class="cyber-button sound-toggle">
+                    <span class="cyber-button__glitch"></span>
+                    🔊
+                </button>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="scoreBoard" class="score-board cyber-panel">
+            <div class="current-score">
+                <h2>SCORE: <span id="score" class="neon-value">0</span></h2>
+            </div>
+            <div class="high-score">
+                <h2>BEST: <span id="highScore" class="neon-value">0</span></h2>
+            </div>
+        </div>
+        
+        <div id="pauseMenu" class="pause-menu cyber-panel">
+            <h2 class="neon-text">PAUSED</h2>
+            <button id="resumeGame" class="cyber-button">
+                <span class="cyber-button__glitch"></span>
+                RESUME
+            </button>
+            <button id="returnToMenu" class="cyber-button">
+                <span class="cyber-button__glitch"></span>
+                MAIN MENU
+            </button>
+        </div>
+        
+        <div class="controls-info cyber-panel">
+            <p>↑ BOOST</p>
+            <p>↓ BRAKE</p>
+            <p>← → STEER</p>
+        </div>
+        
+        <div id="gameOver" class="game-over">
+            <div class="glitch-container">
+                <h2 class="glitch" data-text="GAME OVER">GAME OVER</h2>
+            </div>
+            <p>SCORE: <span id="finalScore" class="neon-value">0</span></p>
+            <div class="game-over-buttons">
+                <button id="restartGame" class="cyber-button">
+                    <span class="cyber-button__glitch"></span>
+                    RETRY
+                </button>
+                <button id="gameOverMenu" class="cyber-button">
+                    <span class="cyber-button__glitch"></span>
+                    MAIN MENU
+                </button>
+            </div>
+        </div>
+        
+        <div id="joystickZone" class="joystick-zone"></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html> 
